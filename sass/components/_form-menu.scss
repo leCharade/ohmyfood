@@ -1,9 +1,10 @@
 .form-menu {
     width:100%;
-    legend {
+    h2 {
         font-size:$font-size-3;
+        font-weight:300;
         position:relative;
-        margin:25px 0 20px 0;
+        margin:45px 0 20px 0;
         &::after {
             content:"";
             display:block;
@@ -18,7 +19,9 @@
     input[type=radio] {
         display:none;
         &:checked + .card-meal {
-            background-color:red;
+            & > .card-meal__check {
+                transform:scaleX(1);
+            }
         }
     }
     .card-meal {
@@ -27,23 +30,24 @@
         background-color:$color-background;
         width:100%;
         height:calc(40px + 7.5vw);
+        margin:16px 0;
         border-radius:10px;
         box-shadow:4px 4px 8px 4px rgba(0,0,0,0.07);
-        &__label {
+        &__name {
             display:flex;
             justify-content:space-between;
             flex-wrap:wrap;
             width:80%;
-            padding:4% 6% 4% 3%;
-            h2 {
+            padding:calc(12px + 1vw) 6% 4% 3%;
+            h3 {
                 width:100%;
                 margin:unset;
                 font-size:$font-size-2;
             }
             p {
                 font-size:$font-size-3;
-                margin:1vw 0vw;
-                max-width:57vw;
+                margin:2px 0vw;
+                max-width: 57vw;
                 white-space:nowrap;
                 overflow:hidden;
                 text-overflow:ellipsis;
@@ -54,9 +58,15 @@
             background-color:$color-tertiary;
             color:white;
             border-radius:0 10px 10px 0;
-            // transform-origin:0% 100%;
-            // transform:scaleX(0);
-            // transition:transform 1s;
+            transform-origin:100% 0%;
+            transform:scaleX(0);
+            transition:transform 1s;
+        }
+        &__label {
+            width:90%;
+            height:calc(40px + 7.5vw);
+            position:absolute;
+            z-index:2;
         }
     }
 }
