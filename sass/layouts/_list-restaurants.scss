@@ -1,0 +1,12 @@
+.list-restaurants {
+    background-color:darken($color-background,4%);
+    padding:10vw $lateral-margin;
+    h2 {
+        font-size:$font-size-1;
+    }
+    #restaurants
+    {
+        position:relative;
+        top:calc(-45px - 19.1vw);
+    }
+}

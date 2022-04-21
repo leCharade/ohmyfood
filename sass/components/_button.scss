@@ -1,0 +1,14 @@
+.button {
+    display:block;
+    background-color:$color-secondary;
+    text-decoration:none;
+    color:white;
+    font-size:$font-size-3;
+    font-weight:500;
+    width:fit-content;
+    margin:8vw auto;
+    padding:4vw 6vw;
+    border-radius:10vw;
+    border:none;
+    box-shadow:inset -20px -20px 50px 0px $color-primary;
+}

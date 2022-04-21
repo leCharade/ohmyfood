@@ -1,0 +1,27 @@
+footer {
+    background-color:lighten(black,25%);
+    color:white;
+    padding:8vw 6vw;
+    h2 {
+        margin:unset;
+        font-family:'Shrikhand',cursive;
+        font-size:$font-size-2;
+        font-weight:400;
+    }
+    ul {
+        list-style-type: none;
+        padding:unset;
+        li {
+            margin:2vw 0;
+            a {
+                color:white;
+                font-weight:500;
+                font-size:$font-size-3;
+                text-decoration: none;
+            }
+            i {
+                width:6vw;
+            }
+        }
+    }
+}
