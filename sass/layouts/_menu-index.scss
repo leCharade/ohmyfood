@@ -1,3 +1,14 @@
+.menu-index {
+    @include tablet-desktop {
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .location {
+        @include desktop-only {
+            display:none;
+        }
+    }
+}
 .location {
     box-sizing: border-box;
     background-color:darken($color-background,10%);
@@ -7,41 +18,76 @@
     padding:5vw 0 5vw 22%;
     display:flex;
     font-size:$font-size-3;
+    @include tablet-only {
+        margin-top:113px;
+        padding:20px 0 20px 30%;
+        font-size:$font-size-desktop-2;
+    }
     .fa-location-dot {
         margin:0px 4vw;
     }
-    & p {
+    p {
         margin:unset;
         font-weight:500;
+    }
+    &--header {
+        display:none;
     }
 }
 .explore {
     background-color:darken($color-background,4%);
-    padding:10vw $lateral-margin;
+    padding:$lateral-margin;
     text-align:center;
+    @include tablet-desktop {
+        width:50%;
+        box-sizing:border-box;
+        background-color:$color-background;
+        padding:50px 2.5% 50px 5%;
+    }
     h1 {
         margin:0 15%;
         font-size:$font-size-1;
+        @include tablet-desktop {
+            font-size:$font-size-desktop-1;
+        }
     }
     p {
         font-size:$font-size-2;
         font-weight:300;
+        @include tablet-desktop {
+            font-size:$font-size-desktop-2;
+        }
     }
 }
 .instructions
 {
     margin:20vw $lateral-margin;
+    @include tablet-desktop {
+        width:50%;
+        box-sizing:border-box;
+        margin:unset;
+        padding:50px 5% 50px 5%;
+    }
     h2 {
         font-size:$font-size-1;
+        @include tablet-desktop {
+            font-size:$font-size-desktop-1;
+        }
     }
     .instruction-line {
         display:flex;
         line-height:6vw;
         background-color:white;
-        box-shadow:4px 4px 8px 4px rgba(0,0,0,0.07);
+        @include block-shadow;
         padding:6vw;
         border-radius:4.5vw;
         margin:5vw 0 5vw 3%;
+        @include tablet-desktop {
+            margin:20px 0 20px 5%;
+            padding:unset;
+            line-height:66px;
+            width:300px;
+        }
         .instruction-number {
             background-color:$color-primary;
             color:white;
@@ -53,6 +99,14 @@
             position:relative;
             z-index:1;
             left:-12%;
+            @include tablet-desktop {
+                font-size:$font-size-desktop-4;
+                width:32px;
+                height:32px;
+                left:-4%;
+                top:16px;
+                line-height:32px;
+            }
         }
         i {
             font-size:$font-size-2;
@@ -61,6 +115,12 @@
             width:10vw;
             position:relative;
             left:-4%;
+            @include tablet-desktop {
+                font-size:$font-size-desktop-2;
+                width:40px;
+                padding-left:20px;
+                line-height:66px;
+            }
         }
         p {
             margin:unset;
@@ -68,12 +128,15 @@
             position:relative;
             font-weight:500;
             left:-4%;
+            @include tablet-desktop {
+                font-size:$font-size-desktop-3;
+            }
         }
-        &--last {
+        &:hover {
             background-color:lighten($color-primary,35%);
             i {
                 color:$color-primary;
             }
         }
     }
-}
+}   

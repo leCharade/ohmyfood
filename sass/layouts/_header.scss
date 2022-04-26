@@ -7,6 +7,11 @@ header {
     top:0;
     z-index:2;
     display:flex;
+    @include desktop-only {
+        position:unset;
+        box-shadow:none;
+        padding-top:50px;
+    }
     img {
         width:52.3vw;
         max-width:392px;
@@ -14,7 +19,10 @@ header {
         max-height:68px;
         display:block;
         margin:auto;
-        position:relative;
+        @include desktop-only {
+            width:392px;
+            height:68px;
+        }
     }
     .fa-arrow-left {
         position:relative;
@@ -23,5 +31,26 @@ header {
         position:absolute;
         left:6%;
         top:calc(15px + 4vw);
+        @include tablet-desktop {
+            font-size:$font-size-desktop-1;
+            top:45px;
+        }
+    }
+    .location {
+        @include desktop-only {
+            display:flex;
+            width:300px;
+            height:66px;
+            border-radius:33px;
+            font-size:$font-size-desktop-2;
+            margin:unset;
+            margin-right:10%;
+            padding:24px;
+        }
+        .fa-location-dot {
+            @include desktop-only {
+                margin:0px 20px;
+            }
+        }
     }
 }

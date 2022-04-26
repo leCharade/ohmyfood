@@ -1,12 +1,25 @@
 .list-restaurants {
     background-color:darken($color-background,4%);
     padding:10vw $lateral-margin;
+    @include tablet-desktop {
+        padding:50px $lateral-margin;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+    }
     h2 {
         font-size:$font-size-1;
+        width:100%;
+        @include tablet-desktop {
+            font-size:$font-size-desktop-1;
+        }
     }
     #restaurants
     {
         position:relative;
         top:calc(-45px - 19.1vw);
+        @include tablet-desktop {
+            top:-163px;
+        }
     }
 }

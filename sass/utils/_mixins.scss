@@ -1,0 +1,18 @@
+@mixin block-shadow {
+    box-shadow:4px 4px 8px 4px rgba(0,0,0,0.07);
+}
+@mixin tablet-only {
+    @media screen and (min-width:768px) and (max-width:992px) {
+        @content;
+    }
+}
+@mixin desktop-only {
+    @media screen and (min-width:993px) {
+        @content;
+    }
+}
+@mixin tablet-desktop {
+    @media screen and (min-width:768px) {
+        @content;
+    }
+}

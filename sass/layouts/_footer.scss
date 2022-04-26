@@ -2,25 +2,48 @@ footer {
     background-color:lighten(black,25%);
     color:white;
     padding:8vw 6vw;
+    @include tablet-desktop {
+        padding:20px;
+    }
     h2 {
         margin:unset;
         font-family:'Shrikhand',cursive;
         font-size:$font-size-2;
         font-weight:400;
+        @include tablet-desktop {
+            font-size:$font-size-desktop-1;
+            margin:15px auto;
+            width:fit-content;
+        }
     }
     ul {
         list-style-type: none;
         padding:unset;
+        @include tablet-desktop {
+            display:flex;
+            justify-content: space-between;
+            max-width:1200px;
+            margin:auto;
+        }
         li {
             margin:2vw 0;
+            @include tablet-desktop {
+                margin:0;
+            }
             a {
                 color:white;
                 font-weight:500;
                 font-size:$font-size-3;
                 text-decoration: none;
+                @include tablet-desktop {
+                    font-size:$font-size-desktop-2;
+                }
             }
             i {
                 width:6vw;
+                @include tablet-desktop {
+                    width:30px;
+                }
             }
         }
     }
