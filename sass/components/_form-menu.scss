@@ -44,8 +44,7 @@
         display:none;
         &:checked + .card-meal {
             & > .card-meal__check {
-                // transform:scaleX(1);
-                transform:translateX(0px);
+                transform:scaleX(1);
                 z-index:1;
                 i {
                     transform:rotate(1turn);
@@ -61,7 +60,6 @@
         height:calc(40px + 7.5vw);
         margin:16px 0;
         border-radius:10px;
-        z-index:0;
         @include block-shadow;
         @include tablet-only {
             height:66px;
@@ -111,18 +109,16 @@
             text-align:center;
             border-radius:0 10px 10px 0;
             transform-origin:100% 0%;
-            // transform:scaleX(0);
-            transform:translateX(60px);
-            transition:transform 0.6s ease-out;
-            z-index:-1;
+            transform:scaleX(0);
+            transition:all 0.6s ease-out;
             @include tablet-desktop {
                 font-size:24px;
             }
-            i {
+            .fa-circle-check {
                 margin:auto;
                 position:relative;
                 top:30%;
-                transition:transform 0.6s;
+                transition:all 0.6s;
                 transform:rotate(0);
                 text-rendering:auto;
             }
@@ -131,7 +127,6 @@
             width:90%;
             height:calc(40px + 7.5vw);
             position:absolute;
-            z-index:2;
         }
     }
 }

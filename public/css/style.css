@@ -322,7 +322,32 @@ header .fa-arrow-left {
     font-size: 30px;
   }
 }
+.restaurant-page__menu__title i:hover {
+  animation: heart-bg-color 0.5s;
+  font-weight: 900;
+  background: -webkit-linear-gradient(13deg, #ff79da 0%, #ba62db 66%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
 
+@keyframes heart-bg-color {
+  0% {
+    background: -webkit-linear-gradient(13deg, rgba(255, 121, 217, 0) 0%, rgba(187, 98, 219, 0) 66%);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: -webkit-linear-gradient(13deg, #ff79da 0%, #ba62db 66%);
+    font-weight: 900;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 footer {
   background-color: #404040;
   color: white;
@@ -491,6 +516,9 @@ a .card-restaurant .card-heart {
     top: 190px;
   }
 }
+a .card-restaurant .card-heart .fa-heart:before {
+  content: "\f004";
+}
 a .card-restaurant .card-new {
   background-color: #99E2D0;
   color: #32b091;
@@ -569,7 +597,7 @@ a .card-restaurant .card-new--new {
   display: none;
 }
 .form-menu input[type=radio]:checked + .card-meal > .card-meal__check {
-  transform: translateX(0px);
+  transform: scaleX(1);
   z-index: 1;
 }
 .form-menu input[type=radio]:checked + .card-meal > .card-meal__check i {
@@ -583,7 +611,6 @@ a .card-restaurant .card-new--new {
   height: calc(40px + 7.5vw);
   margin: 16px 0;
   border-radius: 10px;
-  z-index: 0;
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.07);
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -644,20 +671,19 @@ a .card-restaurant .card-new--new {
   text-align: center;
   border-radius: 0 10px 10px 0;
   transform-origin: 100% 0%;
-  transform: translateX(60px);
-  transition: transform 0.6s ease-out;
-  z-index: -1;
+  transform: scaleX(0);
+  transition: all 0.6s ease-out;
 }
 @media screen and (min-width: 768px) {
   .form-menu .card-meal__check {
     font-size: 24px;
   }
 }
-.form-menu .card-meal__check i {
+.form-menu .card-meal__check .fa-circle-check {
   margin: auto;
   position: relative;
   top: 30%;
-  transition: transform 0.6s;
+  transition: all 0.6s;
   transform: rotate(0);
   text-rendering: auto;
 }
@@ -665,7 +691,6 @@ a .card-restaurant .card-new--new {
   width: 90%;
   height: calc(40px + 7.5vw);
   position: absolute;
-  z-index: 2;
 }
 
 /*# sourceMappingURL=style.css.map */
