@@ -342,7 +342,6 @@ header .fa-arrow-left {
   }
   100% {
     background: -webkit-linear-gradient(13deg, #ff79da 0%, #ba62db 66%);
-    font-weight: 900;
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
