@@ -1,0 +1,42 @@
+@keyframes heart-bg-color {
+    0% {
+      background: -webkit-linear-gradient(13deg, rgba(255, 121, 217, 0) 0%, rgba(187, 98, 219, 0) 66%);
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    5% {
+        background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
+        color: transparent;
+        transform:scale(0.1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      40% {
+        background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
+        color: transparent;
+        transform:scale(0.4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      60% {
+        background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
+        color: transparent;
+        transform:scale(1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      80% {
+        background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
+        color: transparent;
+        transform:scale(1.2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    100% {
+      background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }

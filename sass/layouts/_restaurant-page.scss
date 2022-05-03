@@ -45,9 +45,9 @@
                     font-size:$font-size-desktop-1;
                 }
                 &:hover {
-                    animation: heart-bg-color 0.5s;
+                    animation: heart-bg-color 0.3s;
                     font-weight: 900;
-                    background: -webkit-linear-gradient(13deg, #ff79da 0%, #ba62db 66%);
+                    background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
                     color: transparent;
                     background-clip:text;
                     -webkit-background-clip: text;
@@ -58,17 +58,3 @@
         }
     }
 }
-@keyframes heart-bg-color {
-    0% {
-      background: -webkit-linear-gradient(13deg, rgba(255, 121, 217, 0) 0%, rgba(187, 98, 219, 0) 66%);
-      color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    100% {
-      background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
-      color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }

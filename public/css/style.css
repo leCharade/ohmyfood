@@ -1,4 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
+@keyframes heart-bg-color {
+  0% {
+    background: -webkit-linear-gradient(13deg, rgba(255, 121, 217, 0) 0%, rgba(187, 98, 219, 0) 66%);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  5% {
+    background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
+    color: transparent;
+    transform: scale(0.1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  40% {
+    background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
+    color: transparent;
+    transform: scale(0.4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  60% {
+    background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
+    color: transparent;
+    transform: scale(1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  80% {
+    background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
+    color: transparent;
+    transform: scale(1.2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -323,9 +365,9 @@ header .fa-arrow-left {
   }
 }
 .restaurant-page__menu__title i:hover {
-  animation: heart-bg-color 0.5s;
+  animation: heart-bg-color 0.3s;
   font-weight: 900;
-  background: -webkit-linear-gradient(13deg, #ff79da 0%, #ba62db 66%);
+  background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -333,20 +375,6 @@ header .fa-arrow-left {
   cursor: pointer;
 }
 
-@keyframes heart-bg-color {
-  0% {
-    background: -webkit-linear-gradient(13deg, rgba(255, 121, 217, 0) 0%, rgba(187, 98, 219, 0) 66%);
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  100% {
-    background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
 footer {
   background-color: #404040;
   color: white;
