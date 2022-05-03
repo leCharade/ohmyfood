@@ -38,23 +38,6 @@
                     font-size:$font-size-desktop-1;
                 }
             }
-            i {
-                font-size:$font-size-1;
-                margin-right:4vw;
-                @include tablet-desktop {
-                    font-size:$font-size-desktop-1;
-                }
-                &:hover {
-                    animation: heart-bg-color 0.3s;
-                    font-weight: 900;
-                    background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
-                    color: transparent;
-                    background-clip:text;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    cursor: pointer;
-                }
-            }
         }
     }
 }

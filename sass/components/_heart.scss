@@ -1,0 +1,67 @@
+.fa-heart {
+    font-size:$font-size-1;
+    margin-right:4vw;
+    @include tablet-desktop {
+        font-size:$font-size-desktop-1;
+    }
+    &__input {
+        width:$font-size-1;
+        height:$font-size-1;
+        position:absolute;
+        right:calc(5% + 4vw);
+        opacity:0;
+        @include tablet-desktop {
+            width:$font-size-desktop-1;
+            height:$font-size-desktop-1;
+        }
+        @media screen and (min-width:888px) {
+            right:unset;
+            left:calc(380px + 44.95vw);
+        }
+        &:checked + .fa-heart {
+            animation: heart-hover 0.3s;
+            font-weight: 900;
+            background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
+            color: transparent;
+            background-clip:text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    &--card {
+        position:absolute;
+        top:78%;
+        right:7%;
+        margin-right:unset;
+        font-size:calc(20px + 2.8vw);
+        @include tablet-desktop {
+            font-size:26px;
+            top:190px;
+        }
+        &__input {
+            width:calc(20px + 2.8vw);
+            height:calc(20px + 2.8vw);
+            position:absolute;
+            top:78%;
+            right:7%;
+            z-index:3;
+            opacity:0;
+            @include tablet-desktop {
+                width:26px;
+                height:26px;
+            }
+            &:hover {
+                cursor:pointer;
+            }
+            &:checked + .fa-heart {
+                animation: heart-hover 0.3s;
+                font-weight: 900;
+                background: -webkit-linear-gradient(13deg, $color-secondary 0%, $color-primary 66%);
+                color: transparent;
+                background-clip:text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}

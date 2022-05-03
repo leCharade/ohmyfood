@@ -19,7 +19,13 @@
             width:30%;
         }
     }
-    h2 {
+    .type-meal-name {
+        animation: meal-fade-in 1000ms both;
+        @for $i from 0 through 2 {
+            &--#{$i} {
+                animation-delay:500ms * $i;
+            }
+        }
         font-size:$font-size-3;
         font-weight:300;
         position:relative;
@@ -44,15 +50,30 @@
         display:none;
         &:checked + .card-meal {
             & > .card-meal__check {
-                transform:scaleX(1);
-                z-index:1;
+                width:23%;
                 i {
                     transform:rotate(1turn);
+                    left:0px;
+                }
+                @include tablet-desktop {
+                    width:66px;
+                }
+            }
+            & > .card-meal__name {
+                width:77%;
+                @include tablet-desktop {
+                    width:calc(100% - 66px);
                 }
             }
         }
     }
     .card-meal {
+        animation: meal-fade-in 1000ms both;
+        @for $i from 0 through 14 {
+            &--#{$i} {
+                animation-delay:100ms * $i;
+            }
+        }
         display:flex;
         box-sizing:border-box;
         background-color:$color-background;
@@ -61,11 +82,8 @@
         margin:16px 0;
         border-radius:10px;
         @include block-shadow;
-        @include tablet-only {
-            height:66px;
-            margin:16px auto;
-        }
-        @include desktop-only {
+        @include tablet-desktop {
+            box-sizing:border-box;
             height:66px;
             margin:16px auto;
         }
@@ -75,6 +93,8 @@
             flex-wrap:wrap;
             width:100%;
             padding:calc(12px + 1vw) 6% 4% 3%;
+            transform-origin:0% 0%;
+            transition:all 0.6s ease-out;
             @include tablet-desktop {
                 padding:15px;
             }
@@ -90,27 +110,36 @@
                 }
             }
             p {
-                font-size:$font-size-3;
+                font-size:$font-size-4;
                 margin:2px 0vw;
-                max-width: 57vw;
+                max-width: 85%;
                 white-space:nowrap;
                 overflow:hidden;
                 text-overflow:ellipsis;
+                transform-origin:0% 0%;
+                transition:all 0.6s ease-out;
                 @include tablet-desktop {
                     font-size:$font-size-desktop-3;
+                }
+                &:nth-of-type(1) {
+                    @include desktop-only {
+                        min-width:50%;
+                    }
                 }
             }
         }
         &__check {
-            width:27%;
+            width:0;
             background-color:$color-tertiary;
             color:white;
             font-size:$font-size-1;
             text-align:center;
             border-radius:0 10px 10px 0;
             transform-origin:100% 0%;
-            transform:scaleX(0);
             transition:all 0.6s ease-out;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
             @include tablet-desktop {
                 font-size:24px;
             }
@@ -118,6 +147,7 @@
                 margin:auto;
                 position:relative;
                 top:30%;
+                left:40px;
                 transition:all 0.6s;
                 transform:rotate(0);
                 text-rendering:auto;
@@ -127,6 +157,14 @@
             width:90%;
             height:calc(40px + 7.5vw);
             position:absolute;
+            z-index:1;
+            @include tablet-desktop {
+                height:66px;
+                max-width:460px;
+            }
+            @include desktop-only {
+                width:27vw;
+            }
         }
     }
 }

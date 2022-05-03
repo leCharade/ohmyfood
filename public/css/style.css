@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-@keyframes heart-bg-color {
+@keyframes heart-hover {
   0% {
     background: -webkit-linear-gradient(13deg, rgba(255, 121, 217, 0) 0%, rgba(187, 98, 219, 0) 66%);
     color: transparent;
@@ -39,6 +39,22 @@
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+}
+@keyframes meal-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  30% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 body {
@@ -223,7 +239,7 @@ header .fa-arrow-left {
   width: 6vw;
   height: 6vw;
   border-radius: 3vw;
-  font-size: calc(7px + 1.8vw);
+  font-size: calc(7.5px + 1.8vw);
   position: relative;
   z-index: 1;
   left: -12%;
@@ -354,25 +370,6 @@ header .fa-arrow-left {
   .restaurant-page__menu__title h1 {
     font-size: 30px;
   }
-}
-.restaurant-page__menu__title i {
-  font-size: calc(15px + 2.5vw);
-  margin-right: 4vw;
-}
-@media screen and (min-width: 768px) {
-  .restaurant-page__menu__title i {
-    font-size: 30px;
-  }
-}
-.restaurant-page__menu__title i:hover {
-  animation: heart-bg-color 0.3s;
-  font-weight: 900;
-  background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  cursor: pointer;
 }
 
 footer {
@@ -531,21 +528,6 @@ a .card-restaurant .card-label p {
   margin: unset;
   font-weight: 300;
 }
-a .card-restaurant .card-heart {
-  position: absolute;
-  top: 78%;
-  right: 7%;
-  font-size: calc(20px + 2.8vw);
-}
-@media screen and (min-width: 768px) {
-  a .card-restaurant .card-heart {
-    font-size: 26px;
-    top: 190px;
-  }
-}
-a .card-restaurant .card-heart .fa-heart:before {
-  content: "\f004";
-}
 a .card-restaurant .card-new {
   background-color: #99E2D0;
   color: #32b091;
@@ -597,20 +579,30 @@ a .card-restaurant .card-new--new {
     width: 30%;
   }
 }
-.form-menu h2 {
+.form-menu .type-meal-name {
+  animation: meal-fade-in 1000ms both;
   font-size: calc(9px + 2vw);
   font-weight: 300;
   position: relative;
   margin: 45px 0 20px 0;
 }
+.form-menu .type-meal-name--0 {
+  animation-delay: 0ms;
+}
+.form-menu .type-meal-name--1 {
+  animation-delay: 500ms;
+}
+.form-menu .type-meal-name--2 {
+  animation-delay: 1000ms;
+}
 @media screen and (min-width: 768px) {
-  .form-menu h2 {
+  .form-menu .type-meal-name {
     font-size: 18px;
     margin: 45px auto 20px auto;
     width: 600px;
   }
 }
-.form-menu h2::after {
+.form-menu .type-meal-name::after {
   content: "";
   display: block;
   width: 40px;
@@ -624,13 +616,27 @@ a .card-restaurant .card-new--new {
   display: none;
 }
 .form-menu input[type=radio]:checked + .card-meal > .card-meal__check {
-  transform: scaleX(1);
-  z-index: 1;
+  width: 23%;
 }
 .form-menu input[type=radio]:checked + .card-meal > .card-meal__check i {
   transform: rotate(1turn);
+  left: 0px;
+}
+@media screen and (min-width: 768px) {
+  .form-menu input[type=radio]:checked + .card-meal > .card-meal__check {
+    width: 66px;
+  }
+}
+.form-menu input[type=radio]:checked + .card-meal > .card-meal__name {
+  width: 77%;
+}
+@media screen and (min-width: 768px) {
+  .form-menu input[type=radio]:checked + .card-meal > .card-meal__name {
+    width: calc(100% - 66px);
+  }
 }
 .form-menu .card-meal {
+  animation: meal-fade-in 1000ms both;
   display: flex;
   box-sizing: border-box;
   background-color: #fff;
@@ -640,14 +646,54 @@ a .card-restaurant .card-new--new {
   border-radius: 10px;
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.07);
 }
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .form-menu .card-meal {
-    height: 66px;
-    margin: 16px auto;
-  }
+.form-menu .card-meal--0 {
+  animation-delay: 0ms;
 }
-@media screen and (min-width: 993px) {
+.form-menu .card-meal--1 {
+  animation-delay: 100ms;
+}
+.form-menu .card-meal--2 {
+  animation-delay: 200ms;
+}
+.form-menu .card-meal--3 {
+  animation-delay: 300ms;
+}
+.form-menu .card-meal--4 {
+  animation-delay: 400ms;
+}
+.form-menu .card-meal--5 {
+  animation-delay: 500ms;
+}
+.form-menu .card-meal--6 {
+  animation-delay: 600ms;
+}
+.form-menu .card-meal--7 {
+  animation-delay: 700ms;
+}
+.form-menu .card-meal--8 {
+  animation-delay: 800ms;
+}
+.form-menu .card-meal--9 {
+  animation-delay: 900ms;
+}
+.form-menu .card-meal--10 {
+  animation-delay: 1000ms;
+}
+.form-menu .card-meal--11 {
+  animation-delay: 1100ms;
+}
+.form-menu .card-meal--12 {
+  animation-delay: 1200ms;
+}
+.form-menu .card-meal--13 {
+  animation-delay: 1300ms;
+}
+.form-menu .card-meal--14 {
+  animation-delay: 1400ms;
+}
+@media screen and (min-width: 768px) {
   .form-menu .card-meal {
+    box-sizing: border-box;
     height: 66px;
     margin: 16px auto;
   }
@@ -658,6 +704,8 @@ a .card-restaurant .card-new--new {
   flex-wrap: wrap;
   width: 100%;
   padding: calc(12px + 1vw) 6% 4% 3%;
+  transform-origin: 0% 0%;
+  transition: all 0.6s ease-out;
 }
 @media screen and (min-width: 768px) {
   .form-menu .card-meal__name {
@@ -678,28 +726,37 @@ a .card-restaurant .card-new--new {
   }
 }
 .form-menu .card-meal__name p {
-  font-size: calc(9px + 2vw);
+  font-size: calc(7.5px + 1.8vw);
   margin: 2px 0vw;
-  max-width: 57vw;
+  max-width: 85%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transform-origin: 0% 0%;
+  transition: all 0.6s ease-out;
 }
 @media screen and (min-width: 768px) {
   .form-menu .card-meal__name p {
     font-size: 16px;
   }
 }
+@media screen and (min-width: 993px) {
+  .form-menu .card-meal__name p:nth-of-type(1) {
+    min-width: 50%;
+  }
+}
 .form-menu .card-meal__check {
-  width: 27%;
+  width: 0;
   background-color: #99E2D0;
   color: white;
   font-size: calc(15px + 2.5vw);
   text-align: center;
   border-radius: 0 10px 10px 0;
   transform-origin: 100% 0%;
-  transform: scaleX(0);
   transition: all 0.6s ease-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media screen and (min-width: 768px) {
   .form-menu .card-meal__check {
@@ -710,6 +767,7 @@ a .card-restaurant .card-new--new {
   margin: auto;
   position: relative;
   top: 30%;
+  left: 40px;
   transition: all 0.6s;
   transform: rotate(0);
   text-rendering: auto;
@@ -718,6 +776,96 @@ a .card-restaurant .card-new--new {
   width: 90%;
   height: calc(40px + 7.5vw);
   position: absolute;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .form-menu .card-meal__label {
+    height: 66px;
+    max-width: 460px;
+  }
+}
+@media screen and (min-width: 993px) {
+  .form-menu .card-meal__label {
+    width: 27vw;
+  }
+}
+
+.fa-heart {
+  font-size: calc(15px + 2.5vw);
+  margin-right: 4vw;
+}
+@media screen and (min-width: 768px) {
+  .fa-heart {
+    font-size: 30px;
+  }
+}
+.fa-heart__input {
+  width: calc(15px + 2.5vw);
+  height: calc(15px + 2.5vw);
+  position: absolute;
+  right: calc(5% + 4vw);
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .fa-heart__input {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media screen and (min-width: 888px) {
+  .fa-heart__input {
+    right: unset;
+    left: calc(380px + 44.95vw);
+  }
+}
+.fa-heart__input:checked + .fa-heart {
+  animation: heart-hover 0.3s;
+  font-weight: 900;
+  background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-heart--card {
+  position: absolute;
+  top: 78%;
+  right: 7%;
+  margin-right: unset;
+  font-size: calc(20px + 2.8vw);
+}
+@media screen and (min-width: 768px) {
+  .fa-heart--card {
+    font-size: 26px;
+    top: 190px;
+  }
+}
+.fa-heart--card__input {
+  width: calc(20px + 2.8vw);
+  height: calc(20px + 2.8vw);
+  position: absolute;
+  top: 78%;
+  right: 7%;
+  z-index: 3;
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .fa-heart--card__input {
+    width: 26px;
+    height: 26px;
+  }
+}
+.fa-heart--card__input:hover {
+  cursor: pointer;
+}
+.fa-heart--card__input:checked + .fa-heart {
+  animation: heart-hover 0.3s;
+  font-weight: 900;
+  background: -webkit-linear-gradient(13deg, #FF79DA 0%, #9356DC 66%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*# sourceMappingURL=style.css.map */
