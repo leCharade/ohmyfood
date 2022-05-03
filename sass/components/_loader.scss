@@ -1,0 +1,73 @@
+.loader {
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    z-index:3;
+    background-color:lighten(transparentize($color-tertiary,0.15),10%);
+    color:white;
+    font-weight: 700;
+    text-align:center;
+    padding-top:34vh;
+    animation:loader-fade-out 500ms forwards linear;
+    animation-delay:3s;
+    h2 {
+        font-size:$font-size-1;
+        text-shadow:0px 0px 5px darken($color-tertiary,40%);
+        @include tablet-desktop {
+            font-size:$font-size-desktop-1;
+        }
+    }
+    p {
+        font-size:$font-size-2;
+        text-shadow:0px 0px 5px darken($color-tertiary,40%);
+        @include tablet-desktop {
+            font-size:$font-size-desktop-2;
+        }
+    }
+    .utensil {
+        width:60px;
+        padding:3px;
+        overflow:hidden;
+        display:inline-block;
+        animation: utensils-served 500ms both;
+        &--knife {
+            animation-delay:400ms;
+        }
+    }
+    .fa-utensils {
+        font-size:120px;
+        text-shadow:0px 0px 5px darken($color-tertiary,40%);
+        &--knife {
+            position:relative;
+            right:60px;
+        }
+    }
+    .plate {
+        display:inline-block;
+        box-sizing:border-box;
+        width:120px;
+        height:120px;
+        animation: utensils-served 500ms both;
+        animation-delay:800ms;
+        &__border {
+            width:120px;
+            height:120px;
+            display:block;
+            box-sizing:border-box;
+            border-radius:60px;
+            border: solid 15px white;
+            border-top-color: $color-tertiary;
+            box-shadow:0px 0px 5px darken($color-tertiary,40%), 0px 0px 5px darken($color-tertiary,40%) inset;
+            animation: plate-spin 4s both linear;
+        }
+        &__center {
+            background-color:white;
+            width:74px;
+            height:74px;
+            margin:8px;
+            border-radius:42px;
+            box-shadow:0px 0px 5px darken($color-tertiary,40%)
+        }
+    }
+}
