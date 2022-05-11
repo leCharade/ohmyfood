@@ -1,75 +1,76 @@
-a {
-    display:block;
-    .card-restaurant {
-        width:100%;
-        box-sizing:border-box;
-        padding-top:75%;
-        background-color: $color-background;
-        border-radius:5vw;
-        margin:6vw 0;
-        @include block-shadow;
-        position:relative;
+.card-restaurant {
+    width:100%;
+    box-sizing:border-box;
+    padding-top:75%;
+    background-color: $color-background;
+    border-radius:5vw;
+    margin:6vw 0;
+    @include block-shadow;
+    position:relative;
+    color:$color-text;
+    @include tablet-desktop {
+        width:320px;
+        padding-top:240px;
+        border-radius:24px;
+        margin:40px 2%;
+        }
+    a {
+        display:block;
         color:$color-text;
+    }
+    img {
+        width:100%;
+        height:70%;
+        object-fit: cover;
+        border-radius:5vw 5vw 0 0;
+        position:absolute;
+        top:0;
         @include tablet-desktop {
-            width:320px;
-            padding-top:240px;
-            border-radius:24px;
-            margin:40px 2%;
+            border-radius:24px 24px 0 0;
         }
-        img {
-            width:100%;
-            height:70%;
-            object-fit: cover;
-            border-radius:5vw 5vw 0 0;
-            position:absolute;
-            top:0;
-            @include tablet-desktop {
-                border-radius:24px 24px 0 0;
-            }
+    }
+    .card-label {
+        box-sizing:border-box;
+        height:30%;
+        position:absolute;
+        top:70%;
+        font-size:$font-size-2;
+        padding:3vw 0 3vw 5%;
+        @include tablet-desktop {
+            font-size:$font-size-desktop-2;
+            top:148px;
+            padding:30px 0 30px 5%;
         }
-        .card-label {
-            box-sizing:border-box;
-            height:30%;
-            position:absolute;
-            top:70%;
-            font-size:$font-size-2;
-            padding:3vw 0 3vw 5%;
+        h3 {
+            margin:unset;
+            margin:1vw 0;
             @include tablet-desktop {
-                font-size:$font-size-desktop-2;
-                top:148px;
-                padding:30px 0 30px 5%;
-            }
-            h3 {
-                margin:unset;
-                margin:1vw 0;
-                @include tablet-desktop {
-                    margin:3px 0;
-                }
-            }
-            p {
-                margin:unset;
-                font-weight:300;
+                margin:3px 0;
             }
         }
-        .card-new {
-            background-color:$color-tertiary;
-            color:darken($color-tertiary,30%);
-            font-size:$font-size-3;
-            font-weight:600;
-            padding:2vw 3vw;
-            border-radius:4px;
-            position:absolute;
-            top:7%;
-            right:5%;
-            z-index:1;
-            display:none;
-            @include tablet-desktop {
-                font-size:$font-size-desktop-3;
-                padding:10px 15px;
-            }
-            &--new {
-                display:block;
-            }
+        p {
+            margin:unset;
+            font-weight:300;
+        }
+    }
+    .card-new {
+        background-color:$color-tertiary;
+        color:darken($color-tertiary,30%);
+        font-size:$font-size-3;
+        font-weight:600;
+        padding:2vw 3vw;
+        border-radius:4px;
+        position:absolute;
+        top:7%;
+        right:5%;
+        z-index:1;
+        display:none;
+        @include tablet-desktop {
+            font-size:$font-size-desktop-3;
+            padding:10px 15px;
+        }
+        &--new {
+            display:block;
         }
     }
 }

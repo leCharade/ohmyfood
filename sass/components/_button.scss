@@ -10,6 +10,7 @@
     padding:4vw 6vw;
     border-radius:10vw;
     border:none;
+    cursor:pointer;
     @include block-shadow;
     box-shadow:inset -20px -20px 50px 0px $color-primary,4px 4px 8px 4px rgba(0,0,0,0.07);
     &--order {

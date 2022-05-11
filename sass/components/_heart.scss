@@ -10,6 +10,7 @@
         position:absolute;
         right:calc(5% + 4vw);
         opacity:0;
+        cursor:pointer;
         @include tablet-desktop {
             width:$font-size-desktop-1;
             height:$font-size-desktop-1;
@@ -30,23 +31,27 @@
     }
     &--card {
         position:absolute;
-        top:78%;
-        right:7%;
         margin-right:unset;
-        font-size:calc(20px + 2.8vw);
+        z-index:1;
+        right:5vw;
+        top:53vw;
+        font-size:calc(12px + 4.8vw);
         @include tablet-desktop {
             font-size:26px;
-            top:190px;
+            right:24px;
+            top:188px;
         }
         &__input {
-            width:calc(20px + 2.8vw);
-            height:calc(20px + 2.8vw);
+            width:calc(12px + 4.8vw);
+            height:calc(12px + 4.8vw);
             position:absolute;
-            top:78%;
-            right:7%;
+            right:5vw;
+            top:53vw;
             z-index:3;
             opacity:0;
             @include tablet-desktop {
+                right:24px;
+                top:188px;
                 width:26px;
                 height:26px;
             }

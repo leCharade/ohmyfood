@@ -60,7 +60,7 @@
                 }
             }
             & > .card-meal__name {
-                width:77%;
+                width:70%;
                 @include tablet-desktop {
                     width:calc(100% - 66px);
                 }
@@ -157,9 +157,10 @@
             height:calc(40px + 7.5vw);
             position:absolute;
             z-index:1;
+            cursor:pointer;
             @include tablet-desktop {
                 height:66px;
-                max-width:408px;
+                max-width:460px;
             }
         }
     }

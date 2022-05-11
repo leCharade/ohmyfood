@@ -1,12 +1,13 @@
 .loader {
+    box-sizing:border-box;
     width:100%;
-    height:100%;
+    height:100vh;
     position:fixed;
     top:0;
     z-index:3;
     background-color:lighten(transparentize($color-tertiary,0.15),10%);
     color:white;
-    font-weight: 700;
+    font-weight:700;
     text-align:center;
     padding-top:34vh;
     animation:loader-fade-out 500ms forwards linear;
